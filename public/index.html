@@ -1,0 +1,88 @@
+<!doctype html>  
+<html lang="en" ng-app="buconAngular">  
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <title>Angular TODO app</title> -->
+    <title>BuCon app</title>
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="http://dhg7upb7j7jqa.cloudfront.net/shaping_up_with_angular_js/assets/demo/bootstrap.min.css">
+</head>  
+<body class="list-group" ng-controller="MainController">  
+    <!-- BuCon Header-->
+  <!--   <header>
+        <h1 class="text-center">BuCon Software</h1>
+        <h2 class="text-center"> - Budget Control - </h2>
+    </header> -->
+
+    <div class="container"> 
+    <!--Cabecera-->
+        <div class="jumbotron text-center">
+            <h1>BuCon <span class="label label-info">{{ projects.length }}</span></h1>
+        </div>
+
+        <div class="list-group-item" ng-repeat="project in projects">
+            <h3>
+                {{project.name_project}}
+                <em class="pull-right">{{project.desc_project}}</em>
+            </h3>
+
+            <!-- Project Tabs-->
+            <section class="tab" ng-controller="TabController as tab">
+                <ul class="nav nav-pills">
+                    <li ng-class="{active: tab.isSet(1) }">
+                        <a href ng-click="tab.setTab(1)">Description</a>
+                    </li>
+                    <li ng-class="{active: tab.isSet(2) }">
+                        <a href ng-click="tab.setTab(2)">Specs</a>
+                    </li>
+                    <li ng-class="{active: tab.isSet(3) }">
+                        <a href ng-click="tab.setTab(3)">Review</a>
+                    </li>
+                </ul>
+                <div ng-show="tab.isSet(1)">
+                    <h4>Desc:</h4>
+                    <blockquote>-</blockquote>
+                </div>
+                <div ng-show="tab.isSet(2)">
+                    <h4>Spec:</h4>
+                    <blockquote>Shine</blockquote>
+                </div>
+                <div ng-show="tab.isSet(3)">
+                    <h4>Review:</h4>
+                    <blockquote>-</blockquote>
+                </div>
+            </section>
+         </div>
+
+        <!--Lista de Todos-->
+        <!-- <div id="project-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="checkbox" ng-repeat="project in projects">
+                    <label>
+                        <input type="checkbox" ng-click="deleteProject(project._id)"> {{ project.name_project }} 
+                    </label>
+                    <span ng-click="retrieveProject"></span>
+                 </div>
+             </div>
+         </div> -->
+         <!--Formulario para insertar nuevos Todo-->             
+         <div id="project-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg text-center" placeholder="Inserta un Proyecto Nuevo" ng-model="formData.text">
+                    </div>
+                    <button class="btn btn-primary btn-lg" ng-click="createProject()">Añadir</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> --> 
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>  -->
+    <script src="http://dhg7upb7j7jqa.cloudfront.net/shaping_up_with_angular_js/assets/demo/angular.min.js"></script>
+    <script src="main.js"></script>
+</body>  
+</html>  
