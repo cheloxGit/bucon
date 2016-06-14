@@ -20,10 +20,17 @@ app.configure(function() {
 });
 
 // Definición de modelos
-var bucon_m= mongoose.model('bucon_m', {  
-    name_project: String
+var bucon_m= mongoose.model('project', 
+{  
+    name: String
+    // description: String,
+    // sales_price: String
 });
 
+var bucon_m_deptos = mongoose.model('depto',
+    {
+        name: String
+    });
 // Rutas de nuestro API
 // GET de todos los TODOs
 app.get('/api/projects', function(req, res) {  
@@ -32,6 +39,17 @@ app.get('/api/projects', function(req, res) {
             res.send(err);
         }
         res.json(projects);
+    });
+});
+
+app.get('/api/getDeptos/:name', function (req, res){
+    // console.log(req);
+    bucon_m_deptos.find({"name":req.params.name}, function (err, deptos){
+        if (err){
+            res.send(err);
+        }
+        res.json(deptos);
+        
     });
 });
 

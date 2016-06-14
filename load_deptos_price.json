@@ -1,0 +1,32 @@
+[
+				{
+				 "name":"Vaticano"
+				,"depto":"1A"
+				,"sales_price":"0"
+				},
+				{
+				  "name":"Vaticano"
+				,"depto":"1B"
+				,"sales_price":"0"
+			    },
+				{
+				 "name":"Vaticano"
+				,"depto":"2A"
+				,"sales_price":"0"
+				},
+				{
+				 "name":"Vaticano"
+				,"depto":"2B"
+				,"sales_price":"0"
+				},
+				{
+				 "name":"Guadalupe"
+				,"depto":"Planta Baja 1A"
+				,"sales_price":"0"
+				},
+				{
+				 "name":"Guadalupe"
+				,"depto":"Planta Baja 2B"
+				,"sales_price":"0"
+				}
+]

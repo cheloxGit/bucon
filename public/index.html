@@ -23,34 +23,50 @@
 
         <div class="list-group-item" ng-repeat="project in projects">
             <h3>
-                {{project.name_project}}
-                <em class="pull-right">{{project.desc_project}}</em>
+                {{project.name}}
+                <em class="pull-right">{{project.sales_price}}</em>
             </h3>
 
             <!-- Project Tabs-->
             <section class="tab" ng-controller="TabController as tab">
                 <ul class="nav nav-pills">
                     <li ng-class="{active: tab.isSet(1) }">
-                        <a href ng-click="tab.setTab(1)">Description</a>
+                        <a href ng-click="tab.setTab(1)">Costos Constructivos: {{project._id}}</a>
                     </li>
                     <li ng-class="{active: tab.isSet(2) }">
-                        <a href ng-click="tab.setTab(2)">Specs</a>
+                        <!-- <a href ng-click="tab.setTab(2)">Ingresos</a> -->
+                        <a href ng-click="tab.getDeptos(project.name)">Ingresos</a>
                     </li>
                     <li ng-class="{active: tab.isSet(3) }">
-                        <a href ng-click="tab.setTab(3)">Review</a>
+                        <a href ng-click="tab.setTab(3)">Utilidad</a>
                     </li>
                 </ul>
                 <div ng-show="tab.isSet(1)">
-                    <h4>Desc:</h4>
-                    <blockquote>-</blockquote>
+                    <h4>Costos Constructivos:</h4>
+                    <blockquote>{{project.construction_costs}}</blockquote>
                 </div>
                 <div ng-show="tab.isSet(2)">
-                    <h4>Spec:</h4>
-                    <blockquote>Shine</blockquote>
+                    <h4>Ingresos: {{project.sales_price}}</h4>
+                    <div>
+                        <table>
+                            <tr>
+                                <th>Departamento</th>
+                                <th>Numero</th>
+                                <th>Precio de Venta</th>
+                            </tr>
+
+                            <tr ng-repeat="x in deptos">
+                                <td>{{ x.name }}</td>
+                                <td>{{ x.depto }}</td>
+                                <td>{{ x.sales_price }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <blockquote></blockquote>
                 </div>
                 <div ng-show="tab.isSet(3)">
-                    <h4>Review:</h4>
-                    <blockquote>-</blockquote>
+                    <h4>Utilidad:</h4>
+                    <blockquote>{{project.revenue}}</blockquote>
                 </div>
             </section>
          </div>

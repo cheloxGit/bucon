@@ -1,5 +1,23 @@
 [
-	{name_project:"Portal del Este",desc_project:"Edificio Portal del Este"},
-	{name_project:"Guadalupe",desc_project:"Edificio Guadalupe"},
-	{name_project:"Vaticano",desc_project:"Edificio Vaticano"}
+				{
+				 "name":"Vaticano"
+				,"description":"Edificio Vaticano"
+				,"construction_costs":"0"
+				,"sales_price":"0"
+				,"revenue":"0"
+				},
+				{
+				 "name":"Portal del Este"
+				,"description":"Edificio Portal del Este"
+				,"construction_costs":"0"
+				,"sales_price":"0"
+			    ,"revenue":"0"
+			    },
+				{
+				 "name":"Guadalupe"
+				,"description":"Edificio Guadalupe"
+				,"construction_costs":"0"
+				,"sales_price":"0"
+				,"revenue":"0"
+				}
 ]
