@@ -6,7 +6,18 @@
     <!-- <title>Angular TODO app</title> -->
     <title>BuCon app</title>
     <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="http://dhg7upb7j7jqa.cloudfront.net/shaping_up_with_angular_js/assets/demo/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="http://dhg7upb7j7jqa.cloudfront.net/shaping_up_with_angular_js/assets/demo/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/slate/bootstrap.min.css"/> -->
+    <!-- <link rel="stylesheet" href="trNgGrid.min.css" /> -->
+
+
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.0.3/slate/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//moonstorm.github.io/trNgGrid/release/trNgGrid.min.css" rel="stylesheet" type="text/css"/>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular-route.min.js"></script> -->
+    <script src="//moonstorm.github.io/trNgGrid/release/trNgGrid.min.js"></script>
+
 </head>  
 <body class="list-group" ng-controller="MainController">  
     <!-- BuCon Header-->
@@ -48,19 +59,32 @@
                 <div ng-show="tab.isSet(2)">
                     <h4>Ingresos: {{project.sales_price}}</h4>
                     <div>
-                        <table>
-                            <tr>
-                                <th>Departamento</th>
-                                <th>Numero</th>
-                                <th>Precio de Venta</th>
-                            </tr>
-
-                            <tr ng-repeat="x in deptos">
-                                <td>{{ x.name }}</td>
-                                <td>{{ x.depto }}</td>
-                                <td>{{ x.sales_price }}</td>
-                            </tr>
+                        <table tr-ng-grid="" items="deptos" >
+                            <thead>
+                                <tr>
+                                    <th field-name="name" display-name="Name"></th>
+                                    <th field-name="depto" display-name="Depto"></th>
+                                    <th field-name="depto" display-name="Precio de Venta"></th>
+                                </tr>
+                            </thead>
+                           
                         </table>
+                       <!--  <table tr-ng-grid="" items="deptos">
+                            <thead>
+                                <tr>
+                                    <th>Departamento</th>
+                                    <th>Numero</th>
+                                    <th>Precio de Venta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in deptos">
+                                    <td>{{ x.name }}</td>
+                                    <td>{{ x.depto }}</td>
+                                    <td>{{ x.sales_price }}</td>
+                                </tr>
+                            </tbody>
+                        </table> -->
                     </div>
                     <blockquote></blockquote>
                 </div>
@@ -98,7 +122,8 @@
 
     <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> --> 
     <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>  -->
-    <script src="http://dhg7upb7j7jqa.cloudfront.net/shaping_up_with_angular_js/assets/demo/angular.min.js"></script>
+    <!-- <script src="http://dhg7upb7j7jqa.cloudfront.net/shaping_up_with_angular_js/assets/demo/angular.min.js"></script> -->
     <script src="main.js"></script>
+    <script src="trNgGrid.min.js"></script>
 </body>  
 </html>  

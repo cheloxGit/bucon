@@ -48,6 +48,8 @@ app.get('/api/getDeptos/:name', function (req, res){
         if (err){
             res.send(err);
         }
+        console.log('[server.js - {deptos}]:');
+        console.log(deptos);
         res.json(deptos);
         
     });
